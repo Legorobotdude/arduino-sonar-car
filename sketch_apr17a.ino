@@ -32,11 +32,15 @@ void setup()
   pinMode(in3, OUTPUT);
   pinMode(in4, OUTPUT);
   pinMode(2, OUTPUT);
+  pinMode(A5, OUTPUT);
+  pinMode(A4, OUTPUT);
+  digitalWrite(A5, HIGH);
   digitalWrite(2, HIGH);//Ultrasonic sensor uses this pin for power
 }
 
 void loop()
 {
+  Serial.print(analogRead(A4));
   //Read the Ultrasonic Sensor
   long duration, distance;
   digitalWrite(trigPin, LOW);
@@ -57,8 +61,8 @@ void loop()
   }*/
   if(distance <= 60)//If wall is too close, turn
   {
-    Serial.print(distance);
-    Serial.println(" cm");
+    //Serial.print(distance);
+    //Serial.println(" cm");
     // turn on motors
   digitalWrite(in2, HIGH);
   digitalWrite(in1, LOW);  
@@ -69,8 +73,8 @@ void loop()
   analogWrite(enB, driveVal);
   }
   else {
-    Serial.print(distance);
-    Serial.println(" cm");
+    //Serial.print(distance);
+    //Serial.println(" cm");
     // turn on motors
   digitalWrite(in2, LOW);
   digitalWrite(in1, HIGH);  
@@ -82,10 +86,18 @@ void loop()
     driveVal = 255;
    else
     driveVal = map(distance,0,200,100,255);//Need to change 0-200 values to 1-255 (or higher)
-  analogWrite(enA, driveVal-15);
+  analogWrite(enA, driveVal-25);
     analogWrite(enB, driveVal);
     
   }
+  int sensorValue = analogRead(A0);
+  if (sensorValue > 800)
+  {
+    digitalWrite(A4,LOW);
+  }
+  else
+  {
+    digitalWrite(A4,HIGH);
+  }
   delay(250);
 }
-
