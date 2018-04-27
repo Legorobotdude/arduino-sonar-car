@@ -1,4 +1,4 @@
-//Aditya Bawankule and Aniruth Nandella
+//Aditya Bawankule and Anirudh Nandella
 //References:
 //http://www.instructables.com/id/Simple-Arduino-and-HC-SR04-Example/
 //https://tronixlabs.com.au/news/tutorial-l298n-dual-motor-controller-module-2a-and-arduino
