@@ -1,5 +1,5 @@
 //Aditya Bawankule and Aniruth Nandella
-//Refrences:
+//References:
 //http://www.instructables.com/id/Simple-Arduino-and-HC-SR04-Example/
 //https://tronixlabs.com.au/news/tutorial-l298n-dual-motor-controller-module-2a-and-arduino
 //https://www.arduino.cc/reference/en/language/functions/math/map/
